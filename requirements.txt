@@ -3,3 +3,5 @@ torchvision
 diffusers==0.20.1
 transformers
 tqdm
+huggingface_hub==0.15.1
+gradio==4.44.1

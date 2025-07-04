@@ -1,0 +1,21 @@
+conda activate multidiffusion
+cd MultiDiffusion/
+
+python region_based.py --W 512 --H 512 \
+    --fg_masks "examples/elephant_mask.png" \
+    --fg_prompts "A White Elephant" \
+    --bg_prompt "Many stars and the milky way shining brighly in the dark night sky" \
+    --outfile outputs/reboot_elepant_05.jpg
+
+
+python region_based.py \
+    --fg_masks "examples/pile_mask.png" "examples/pile_top_mask.png" \
+    --fg_prompts "a tree trunk" "a bright red cardninal bird" \
+    --bg_prompt "a desolate and arid desert" \
+    --outfile outputs/reboot_bird_pile_05.jpg
+
+python region_based.py \
+    --fg_masks "masks/rabbit.png" "masks/duck.png" \
+    --fg_prompts "a rabbit" "a duck" \
+    --bg_prompt "a lake garden" \
+    --outfile outputs/reboot_rabbit_duck_05.jpg

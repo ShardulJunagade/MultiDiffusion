@@ -11,6 +11,7 @@ import argparse
 import numpy as np
 from PIL import Image
 from tqdm import tqdm
+import os
 
 def seed_everything(seed):
     torch.manual_seed(seed)
@@ -211,4 +212,6 @@ if __name__ == '__main__':
     img = sd.generate(masks, prompts, neg_prompts, opt.H, opt.W, opt.steps, bootstrapping=opt.bootstrapping)
 
     # save image
+    # Ensure output directory exists
+    os.makedirs(os.path.dirname(opt.outfile), exist_ok=True)
     img.save(opt.outfile)

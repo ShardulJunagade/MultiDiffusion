@@ -46,10 +46,10 @@ gr.Interface(
         ),
         gr.Slider(value=4096, minimum=512, maximum=4608, step=128),
     ],
-    outputs=gr.Gallery().style(grid=[2], height="auto"),
+    outputs=gr.Gallery(),
     title="Generate a panoramic image!",
     description=description,
     article=article,
     examples=[["a photo of the dolomites", 4096]],
-    allow_flagging=False,
-).launch(enable_queue=True)
+    allow_flagging='never',
+).launch(share=True)
